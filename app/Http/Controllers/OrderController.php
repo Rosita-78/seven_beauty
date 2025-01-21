@@ -76,8 +76,8 @@ class OrderController extends Controller
 
     public function invoice($order){
         $orders = Order::find($order);
-        $order->status = 'paid';
-        $order->save();
+        $orders->status = 'paid';
+        $orders->save();
         return view('order.invoice', compact('orders'));
     }
 
